@@ -9,15 +9,15 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button redirectUpdateButton;
-    private Intent updateIntent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Making the intent
+
+        //-------------------Update-------------------//
+        Button redirectUpdateButton;
+        Intent updateIntent;
 
         // Getting the elements
         redirectUpdateButton = (Button) findViewById(R.id.updateButton);
@@ -27,6 +27,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(updateIntent);
+            }
+        });
+
+        //-------------------Update-------------------//
+        Button seeDataButton;
+        Intent seeDataIntent;
+
+        // Getting the elements
+        seeDataButton = (Button) findViewById(R.id.globalButtonData);
+        seeDataIntent = new Intent(this, SeeDataActivity.class);
+
+        seeDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(seeDataIntent);
             }
         });
     }

@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">GDFRapp</string>
+    <string name="resume">Resume</string>
+    <string name="you_can_play_with">You can play with :</string>
+    <string name="textview">TextView</string>
+    <string-array name="names">
+        <item>Perso 1</item>
+        <item>Perso 2</item>
+        <item>Perso 3</item>
+        <item>Perso 4</item>
+        <item>Perso 5</item>
+        <item>Perso 6</item>
+    </string-array>
+    <string name="title_home">Home</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
+
+
+
