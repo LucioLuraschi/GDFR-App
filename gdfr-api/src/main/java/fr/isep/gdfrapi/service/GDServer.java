@@ -1,5 +1,6 @@
 package fr.isep.gdfrapi.service;
 
+import fr.isep.gdfrapi.model.Player;
 import fr.isep.gdfrapi.model.PlayerData;
 import jdash.client.GDClient;
 import jdash.common.entity.GDUserProfile;
@@ -14,7 +15,7 @@ public class GDServer {
         this.gdServer = GDClient.create();
     }
 
-    public PlayerData searchPlayerFromName(@NotNull PlayerData player) {
+    public Player searchPlayerFromName(@NotNull Player player) {
         try {
             GDUserStats userSearch = this.gdServer.searchUsers(player.getUsername(), 0).blockFirst();
             if (userSearch != null) {

@@ -1,6 +1,8 @@
 package fr.isep.gdfrapi.model;
 
+import jdash.common.entity.GDUserProfile;
 import lombok.Data;
+import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
 
@@ -54,5 +56,12 @@ public class Player {
     }
     public void setIdGD(Integer idGD) {
         this.idGD = idGD;
+    }
+
+    public void setGDStats(@NotNull GDUserProfile user) {
+        this.username = user.name();
+        this.idGD = (int) user.accountId();
+        this.statsGD = new StatsGD();
+        this.statsGD.setGDStats(user);
     }
 }

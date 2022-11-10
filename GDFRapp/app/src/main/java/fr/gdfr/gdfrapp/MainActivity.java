@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Intent updateIntent;
 
         // Getting the elements
-        redirectUpdateButton = (Button) findViewById(R.id.updateButton);
+        redirectUpdateButton = (Button) findViewById(R.id.addPlayerButton);
         updateIntent = new Intent(this, UpdateActivity.class);
 
         redirectUpdateButton.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +43,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(seeDataIntent);
+            }
+        });
+
+        //-------------------Update-------------------//
+        Button seeUpdateButton;
+        Toast messageSoon = Toast.makeText(this,
+                "This functionality will be implemented soon", Toast.LENGTH_LONG);
+
+        // Getting the elements
+        seeUpdateButton = (Button) findViewById(R.id.updateButton);
+        seeUpdateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                messageSoon.show();
             }
         });
     }

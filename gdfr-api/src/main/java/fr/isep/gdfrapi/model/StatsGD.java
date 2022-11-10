@@ -1,6 +1,8 @@
 package fr.isep.gdfrapi.model;
 
+import jdash.common.entity.GDUserProfile;
 import lombok.Data;
+import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,6 +30,8 @@ public class StatsGD {
     private Integer cps;
     @Column(name = "rank", nullable = true)
     private Integer rank;
+    @Column(name = "mod_status", nullable = true)
+    private String modStatus;
 
     public Integer getStars() {
         return stars;
@@ -49,5 +53,18 @@ public class StatsGD {
     }
     public Integer getRank() {
         return rank;
+    }
+    public String getModstatus() { return modStatus; }
+
+    public void setGDStats(@NotNull GDUserProfile user) {
+        this.idGD = (int) user.accountId();
+        this.stars = user.stars();
+        this.diamonds = user.diamonds();
+        this.secretCoins = user.secretCoins();
+        this.userCoins = user.userCoins();
+        this.demons = user.demons();
+        this.cps = user.creatorPoints();
+        this.rank = user.globalRank();
+        this.modStatus = user.role().get().name();
     }
 }

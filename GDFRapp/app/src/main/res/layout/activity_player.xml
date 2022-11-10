@@ -7,11 +7,12 @@
     tools:context=".PlayerResumeActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="@string/resume"
+        android:id="@+id/AjoutTitle"
+        android:layout_width="313dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:text="Loading..."
+        android:textAlignment="center"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -20,49 +21,83 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="391dp"
+        android:layout_width="370dp"
         android:layout_height="603dp"
         android:orientation="vertical"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/AjoutTitle">
 
         <TextView
             android:id="@+id/textUpdateDesc"
             android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_marginTop="0dp"
-            android:text="@string/you_can_play_with"
             android:textAlignment="viewStart"
             android:textSize="16sp" />
 
 
         <TableRow
+            android:id="@+id/GDStatsTab"
             android:layout_width="match_parent"
-            android:layout_height="199dp">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="165dp"
-                android:layout_height="153dp"
-                android:layout_marginTop="0dp"
-                app:srcCompat="@drawable/bulbasaur"
-                tools:ignore="ContentDescription" />
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="227dp"
-                android:layout_height="152dp"
-                android:text="@string/textview" />
+                android:id="@+id/GDStatsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:text="Geometry Dash Stats"
+                android:textAlignment="center"
+                android:textSize="24sp" />
 
         </TableRow>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/GDStats"
             android:layout_width="match_parent"
-            android:layout_height="269dp"
+            android:layout_height="143dp"
             android:text="TextView" />
+
+        <TextView
+            android:id="@+id/DLStatsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:text="DemonList Stats"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/DLStats"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="TextView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:layout_marginTop="0dp"
+            app:srcCompat="@drawable/bulbasaur"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What a beautiful pokemon we got here..."
+            android:textAlignment="center"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="He is welcoming you for choosing this player"
+            android:textAlignment="center"
+            android:textStyle="italic" />
 
     </LinearLayout>
 

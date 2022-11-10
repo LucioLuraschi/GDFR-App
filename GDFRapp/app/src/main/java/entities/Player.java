@@ -1,6 +1,5 @@
 package entities;
 
-import jdash.common.entity.GDUserProfile;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -40,16 +39,9 @@ public class Player {
         this.username = username;
     }
 
-    public void setGDStats(@NotNull GDUserProfile user) {
-        this.username = user.name();
-        this.idGD = (int) user.accountId();
-        this.stars = user.stars();
-        this.diamonds = user.diamonds();
-        this.secretCoins = user.secretCoins();
-        this.userCoins = user.userCoins();
-        this.demons = user.demons();
-        this.cps = user.creatorPoints();
-        this.rank = user.globalRank();
+    public void setDemonListStats(String hardest, int demonListScore) {
+        this.hardestDemonList = hardest;
+        this.demonListScore = demonListScore;
     }
 
     public void setGDStats(int stars, int diamonds, int secretCoins, int userCoins, int demons, int cps, int rank) {
@@ -82,6 +74,25 @@ public class Player {
         message += "Demons : " + this.demons + "\n";
         message += "Rank : " + this.rank + "\n";
         return message;
+    }
+
+    public String gdStatsToView() {
+        String stats = "";
+        stats += "Stars : " + stars + "\n";
+        stats += "Diamonds : " + diamonds + "\n";
+        stats += "Secret Coins : " + secretCoins + "\n";
+        stats += "User Coins : " + userCoins + "\n";
+        stats += "Demons : " + demons + "\n";
+        stats += "CPs : " + cps + "\n";
+        stats += "Rank : " + ((rank != 0) ? rank : "No rank (maybe a hacker...)");
+        return stats;
+    }
+
+    public String dlStatsToView() {
+        String stats = "";
+        stats += "Hardest done : " + hardestDemonList + "\n";
+        stats += "DemonList Points : " + (((double) demonListScore) / 100);
+        return stats;
     }
 
     // Getters //
